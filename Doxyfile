@@ -5,7 +5,7 @@
 
 # Project related settings
 PROJECT_NAME           = "My Project"
-OUTPUT_DIRECTORY       = ./docs
+OUTPUT_DIRECTORY       = docs
 GENERATE_HTML          = YES
 HTML_OUTPUT            = .
 
