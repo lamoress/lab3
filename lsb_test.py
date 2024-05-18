@@ -1,7 +1,7 @@
 import unittest
 from PIL import Image
 import os
-from lsb import encode_lsb, decode_lsb, psnr  # Убедитесь, что модуль lsb.py находится в корне репозитория
+from lsb import encode_lsb, decode_lsb, psnr
 
 class TestSteganography(unittest.TestCase):
 
@@ -11,12 +11,10 @@ class TestSteganography(unittest.TestCase):
         self.encoded_image_path = "encoded_image.bmp"
         self.decoded_file_path = "decoded_file.txt"
 
-        # Создание тестового секретного файла
         with open(self.secret_file_path, 'w', encoding='utf-8') as f:
             f.write("Secret Message")
 
     def tearDown(self):
-        # Явно закрываем все изображения перед удалением
         if os.path.exists(self.encoded_image_path):
             try:
                 os.remove(self.encoded_image_path)
@@ -48,7 +46,7 @@ class TestSteganography(unittest.TestCase):
         original_image = Image.open(self.original_image_path)
         encoded_image = Image.open(self.encoded_image_path)
         psnr_value = psnr(original_image, encoded_image)
-        self.assertTrue(psnr_value > 30)  # Обычно PSNR выше 30 считается хорошим
+        self.assertTrue(psnr_value > 30)
         original_image.close()
         encoded_image.close()
 
