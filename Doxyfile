@@ -1,0 +1,69 @@
+# Doxyfile 1.8.18
+
+# This file describes the settings to be used by the documentation system
+# doxygen (www.doxygen.org) for a project.
+#
+# All text after a double hash (##) is considered a comment and is placed in
+# the generated output.
+
+# The format is:
+#     TAG = value [value, ...]
+# For lists of values, items can also be appended using:
+#     TAG += value [value, ...]
+# Values that contain spaces should be placed between quotes (" ").
+
+#---------------------------------------------------------------------------
+# Project related configuration options
+#---------------------------------------------------------------------------
+
+# The PROJECT_NAME tag is a single word (or a sequence of words enclosed in
+# quotes) that should identify the project for which the documentation is
+# being generated. This name is used in the title of most generated pages and
+# in a few other places.
+PROJECT_NAME = "LSB Project"
+
+# The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) path
+# into which the generated documentation will be written. If a relative path
+# is entered, it will be relative to the location where doxygen was started.
+OUTPUT_DIRECTORY = docs
+
+# If the RECURSIVE tag is set to YES, doxygen will recursively search the
+# directories for input files to be processed.
+RECURSIVE = YES
+
+# The EXCLUDE_PATTERNS tag can be used to specify one or more wildcard patterns
+# to exclude certain files from processing.
+EXCLUDE_PATTERNS = */.git/*
+
+#---------------------------------------------------------------------------
+# Configuration options related to the input files
+#---------------------------------------------------------------------------
+
+# The INPUT tag can be used to specify the files and/or directories that contain
+# documented source files. You may enter file names like "myfile.cpp" or
+# directories like "/usr/src/myproject". Separate the files or directories with
+# spaces.
+INPUT = .
+
+#---------------------------------------------------------------------------
+# Configuration options related to the HTML output
+#---------------------------------------------------------------------------
+
+# If the GENERATE_HTML tag is set to YES (the default), doxygen will generate
+# HTML output.
+GENERATE_HTML = YES
+
+# If the HTML_OUTPUT tag is set, doxygen will place the HTML output in the
+# directory specified by the tag. If a relative path is entered, it will be
+# relative to the location where doxygen was started. If left blank, the
+# default 'html' will be used.
+HTML_OUTPUT = html
+
+#---------------------------------------------------------------------------
+# Configuration options related to the LaTeX output
+#---------------------------------------------------------------------------
+
+# If the GENERATE_LATEX tag is set to YES (the default), doxygen will generate
+# LaTeX output. This output can be used to produce a PDF by running the
+# resulting LaTeX files through the pdflatex tool.
+GENERATE_LATEX = NO
