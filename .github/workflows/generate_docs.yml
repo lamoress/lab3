@@ -13,23 +13,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Install Doxygen
-      run: sudo apt install -y doxygen
+      - name: Install Doxygen
+        run: sudo apt install -y doxygen
 
-    - name: Install Graphviz
-      run: sudo apt install -y graphviz
+      - name: Install Graphviz
+        run: sudo apt install -y graphviz
 
-    - name: Generate Documentation
-      run: doxygen Doxyfile
+      - name: Generate Documentation
+        run: doxygen Doxyfile
 
-    - name: List files for debugging
-      run: ls -R ./docs/html
+      - name: List files for debugging
+        run: ls -R ./docs/html
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs/html
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/html
