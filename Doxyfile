@@ -1,15 +1,15 @@
 # Doxyfile
-PROJECT_NAME           = "LSB Project"
-OUTPUT_DIRECTORY       = "docs"
+
+# This is a configuration file for Doxygen
+# For more options, refer to the Doxygen documentation: https://www.doxygen.nl/manual/config.html
+
+# Project related settings
+PROJECT_NAME           = "My Project"
+OUTPUT_DIRECTORY       = ./docs
 GENERATE_HTML          = YES
-GENERATE_LATEX         = NO
-INPUT                  = "lsb.py lsb_test.py README.md"
-RECURSIVE              = NO
-EXCLUDE                =
-FILE_PATTERNS          = *.py *.md
-QUIET                  = NO
-WARNINGS               = YES
-WARN_IF_UNDOCUMENTED   = YES
-WARN_IF_DOC_ERROR      = YES
-HTML_OUTPUT            = html
-GENERATE_TREEVIEW      = YES
+HTML_OUTPUT            = .
+
+# Input settings
+INPUT                  = ./src
+
+# Other options can be set as needed
