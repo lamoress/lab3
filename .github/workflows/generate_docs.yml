@@ -16,11 +16,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Install Chocolatey
+      run: |
+        Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
     - name: Install Doxygen
       run: |
-        curl -L -o doxygen.zip https://www.doxygen.nl/files/doxygen-1.9.3.windows.bin.zip
-        tar -xf doxygen.zip -C doxygen
-        setx PATH "%PATH%;%cd%\\doxygen\\doxygen-1.9.3\\bin"
+        choco install doxygen.install -y
+        refreshenv
 
     - name: Generate Documentation
       run: doxygen Doxyfile
