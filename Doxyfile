@@ -13,8 +13,5 @@ INPUT = .
 GENERATE_HTML = YES
 HTML_OUTPUT = html
 
-# The default page of the generated HTML documentation.
-USE_MDFILE_AS_MAINPAGE = index.html
-
 # Configuration options related to the LaTeX output
 GENERATE_LATEX = NO
