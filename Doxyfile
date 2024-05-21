@@ -1,17 +1,10 @@
-# Doxyfile 1.9.2
-
-# Project settings
 PROJECT_NAME           = "LSB"
 PROJECT_NUMBER         = "1.0"
 OUTPUT_DIRECTORY       = docs
 
-# Input settings
-INPUT                  = .   # Путь к корневой директории
+INPUT                  = .  # Путь к корневой директории
 RECURSIVE              = NO  # Если нет подкаталогов, можно поставить NO
 
-# HTML output
 GENERATE_HTML          = YES
 HTML_OUTPUT            = html
 GENERATE_LATEX         = NO
-
-# Other settings
