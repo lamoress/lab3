@@ -2,17 +2,14 @@ from PIL import Image
 import math
 import os
 
-"""
-    Краткое описание функции.
-
-    Подробное описание функции.
-
-    :param param1: Описание параметра 1.
-    :param param2: Описание параметра 2.
-    :return: Описание возвращаемого значения.
-    """
-    
 def file_to_binary(file_path):
+    """
+    Конвертирует файл в бинарное представление.
+
+    :param file_path: Путь к файлу.
+    :return: Бинарное представление файла.
+    :raises FileNotFoundError: Если файл не найден.
+    """
     try:
         with open(file_path, 'rb') as file:
             binary_data = ''.join(format(byte, '08b') for byte in file.read())
@@ -21,6 +18,13 @@ def file_to_binary(file_path):
         raise FileNotFoundError(f"Файл {file_path} не найден.")
 
 def psnr(original_image, encoded_image):
+    """
+    Рассчитывает отношение сигнал/шум (PSNR) между двумя изображениями.
+
+    :param original_image: Оригинальное изображение.
+    :param encoded_image: Изображение с закодированным сообщением.
+    :return: Значение PSNR.
+    """
     mse = 0
     width, height = original_image.size
 
@@ -36,23 +40,19 @@ def psnr(original_image, encoded_image):
     else:
         return 20 * math.log10(255 / math.sqrt(mse))
 
-# Файл в изображение с LSB
 def encode_lsb(image_path, file_path):
-     """
-    Закодировать сообщение в изображение с помощью метода наименее значимого бита (LSB).
-
-    :param image: Входное изображение для кодирования сообщения.
-    :param message: Сообщение для кодирования в изображении.
-    :return: Изображение с закодированным сообщением.
     """
-    pass
+    Закодировать файл в изображение с использованием метода наименее значимого бита (LSB).
 
+    :param image_path: Путь к изображению.
+    :param file_path: Путь к файлу для кодирования.
+    :return: Статус выполнения операции.
+    """
     try:
         binary_data = file_to_binary(file_path)
         img = Image.open(image_path)
         width, height = img.size
 
-        # Проверка, влезает ли бинарное представление файла в изображение
         if len(binary_data) > width * height * 3:
             raise ValueError("Файл слишком большой для данного изображения.")
 
@@ -76,15 +76,13 @@ def encode_lsb(image_path, file_path):
     except FileNotFoundError as e:
         return str(e)
 
-# Декодированиe файла из изображения
-def decode_lsb(image_path
+def decode_lsb(image_path):
     """
     Декодировать сообщение из изображения, закодированного методом наименее значимого бита (LSB).
 
-    :param image: Входное изображение для декодирования сообщения.
-    :return: Декодированное сообщение.
+    :param image_path: Путь к изображению для декодирования.
+    :return: Статус выполнения операции.
     """
-    pass
     img = Image.open(image_path)
     binary_data = ''
     width, height = img.size
