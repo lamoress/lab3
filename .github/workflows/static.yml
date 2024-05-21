@@ -15,11 +15,9 @@ jobs:
       - name: Install Doxygen
         run: sudo apt-get install doxygen graphviz
 
-      - name: Build and deploy
-        run: |
-          doxygen Doxyfile
-          cp -r docs/html/* $GITHUB_WORKSPACE
-          
+      - name: Generate Doxygen documentation
+        run: doxygen Doxyfile
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
