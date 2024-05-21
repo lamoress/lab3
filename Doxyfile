@@ -1,15 +1,6 @@
-# Doxyfile
-
-# This is a configuration file for Doxygen
-# For more options, refer to the Doxygen documentation: https://www.doxygen.nl/manual/config.html
-
-# Project related settings
-PROJECT_NAME           = "My Project"
-OUTPUT_DIRECTORY       = docs
-GENERATE_HTML          = YES
-HTML_OUTPUT            = .
-
-# Input settings
-INPUT                  = ./src
-
-# Other options can be set as needed
+PROJECT_NAME = "lsb"
+INPUT = "src"
+RECURSIVE = YES
+OUTPUT_DIRECTORY = "docs"
+GENERATE_HTML = YES
+GENERATE_LATEX = NO
