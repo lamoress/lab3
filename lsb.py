@@ -22,7 +22,7 @@ def psnr(original_image, encoded_image):
     Рассчитывает отношение сигнал/шум (PSNR) между двумя изображениями.
 
     :param original_image: Оригинальное изображение.
-    :param encoded_image: Изображение с закодированным сообщением.
+    :param encoded_image: Закодированное изображение.
     :return: Значение PSNR.
     """
     mse = 0
@@ -42,11 +42,11 @@ def psnr(original_image, encoded_image):
 
 def encode_lsb(image_path, file_path):
     """
-    Закодировать файл в изображение с использованием метода наименее значимого бита (LSB).
+    Закодировать сообщение в изображение с помощью метода наименее значимого бита (LSB).
 
     :param image_path: Путь к изображению.
-    :param file_path: Путь к файлу для кодирования.
-    :return: Статус выполнения операции.
+    :param file_path: Путь к файлу, который нужно закодировать.
+    :return: Статус выполнения.
     """
     try:
         binary_data = file_to_binary(file_path)
@@ -80,8 +80,8 @@ def decode_lsb(image_path):
     """
     Декодировать сообщение из изображения, закодированного методом наименее значимого бита (LSB).
 
-    :param image_path: Путь к изображению для декодирования.
-    :return: Статус выполнения операции.
+    :param image_path: Путь к изображению.
+    :return: Статус выполнения.
     """
     img = Image.open(image_path)
     binary_data = ''
@@ -104,23 +104,3 @@ def decode_lsb(image_path):
     with open("decoded_file.txt", 'wb') as file:
         file.write(file_data)
     return "Файл успешно извлечен."
-
-if __name__ == '__main__':
-    original_image_path = "1.bmp"
-    secret_file_path = "secret.txt"
-
-    if not os.path.exists(original_image_path):
-        print(f"Ошибка: Файл изображения '{original_image_path}' не существует.")
-    elif not os.path.exists(secret_file_path):
-        print(f"Ошибка: Секретный файл '{secret_file_path}' не существует.")
-    else:
-        original_image = Image.open(original_image_path)
-
-        encode_result = encode_lsb(original_image_path, secret_file_path)
-        print(encode_result)
-
-        decode_result = decode_lsb("encoded_image.bmp")
-        print(decode_result)
-        encoded_image = Image.open("encoded_image.bmp")
-        psnr_value = psnr(original_image, encoded_image)
-        print("PSNR между оригинальным и закодированным изображением:", psnr_value)
