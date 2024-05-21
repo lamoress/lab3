@@ -1,10 +1,8 @@
-# Doxyfile configuration for Doxygen
-
-PROJECT_NAME           = "LSB2"
+PROJECT_NAME           = "LSB"
 OUTPUT_DIRECTORY       = docs
 CREATE_SUBDIRS         = YES
 INPUT                  = lsb.py lsb_test.py
-EXCLUDE_PATTERNS       =
+USE_MDFILE_AS_MAINPAGE = mainpage.md
 RECURSIVE              = YES
 EXTRACT_ALL            = YES
 EXTRACT_PRIVATE        = YES
