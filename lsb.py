@@ -2,6 +2,16 @@ from PIL import Image
 import math
 import os
 
+/**
+ * \brief Краткое описание функции.
+ *
+ * Подробное описание функции.
+ *
+ * \param param1 Описание параметра 1.
+ * \param param2 Описание параметра 2.
+ * \return Описание возвращаемого значения.
+ */
+    
 def file_to_binary(file_path):
     try:
         with open(file_path, 'rb') as file:
