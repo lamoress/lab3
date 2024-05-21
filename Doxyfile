@@ -8,4 +8,3 @@ EXTRACT_PRIVATE        = YES
 GENERATE_HTML          = YES
 GENERATE_LATEX         = NO
 GENERATE_XML           = NO
-USE_MDFILE_AS_MAINPAGE = lsb.py
