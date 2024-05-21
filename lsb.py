@@ -6,7 +6,7 @@ def file_to_binary(file_path):
     """
     Конвертирует файл в бинарное представление.
 
-    :param file_path: Путь к файлу.
+    Путь к файлу.
     :return: Бинарное представление файла.
     :raises FileNotFoundError: Если файл не найден.
     """
