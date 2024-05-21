@@ -12,13 +12,14 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v2
 
-      - name: Set up GitHub Pages
-        uses: actions/configure-pages@v1
+      - name: Install Doxygen
+        run: sudo apt-get install doxygen graphviz
 
       - name: Build and deploy
         run: |
           doxygen Doxyfile
           cp -r docs/html/* $GITHUB_WORKSPACE
+          
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
