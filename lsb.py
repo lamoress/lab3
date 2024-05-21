@@ -38,6 +38,15 @@ def psnr(original_image, encoded_image):
 
 # Файл в изображение с LSB
 def encode_lsb(image_path, file_path):
+     """
+    Закодировать сообщение в изображение с помощью метода наименее значимого бита (LSB).
+
+    :param image: Входное изображение для кодирования сообщения.
+    :param message: Сообщение для кодирования в изображении.
+    :return: Изображение с закодированным сообщением.
+    """
+    pass
+
     try:
         binary_data = file_to_binary(file_path)
         img = Image.open(image_path)
@@ -68,7 +77,14 @@ def encode_lsb(image_path, file_path):
         return str(e)
 
 # Декодированиe файла из изображения
-def decode_lsb(image_path):
+def decode_lsb(image_path
+    """
+    Декодировать сообщение из изображения, закодированного методом наименее значимого бита (LSB).
+
+    :param image: Входное изображение для декодирования сообщения.
+    :return: Декодированное сообщение.
+    """
+    pass
     img = Image.open(image_path)
     binary_data = ''
     width, height = img.size
