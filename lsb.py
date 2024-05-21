@@ -1,3 +1,45 @@
+"""
+@mainpage
+
+# Заголовок главной страницы
+
+Добро пожаловать на главную страницу документации проекта!
+
+## О проекте
+Здесь можно описать ваш проект: его цели, возможности, и другие важные аспекты.
+
+## Как начать
+Пошаговая инструкция по началу работы с проектом.
+
+## Разделы документации
+- @ref file_to_binary
+- @ref psnr
+- @ref encode_lsb
+- @ref decode_lsb
+
+## Дополнительная информация
+Любые другие важные сведения или ссылки.
+"""
+
+from PIL import Image
+import math
+import os
+
+def file_to_binary(file_path):
+    """
+    Конвертирует файл в бинарное представление.
+
+    :param file_path: Путь к файлу.
+    :return: Бинарное представление файла.
+    :raises FileNotFoundError: Если файл не найден.
+    """
+    try:
+        with open(file_path, 'rb') as file:
+            binary_data = ''.join(format(byte, '08b') for byte in file.read())
+        return binary_data
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Файл {file_path} не
+
 from PIL import Image
 import math
 import os
