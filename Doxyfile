@@ -1,9 +1,13 @@
+# Doxyfile configuration for Doxygen
+
 PROJECT_NAME           = "LSB2"
-PROJECT_NUMBER         = "1.0"
 OUTPUT_DIRECTORY       = docs
-INPUT                  = .
-FILE_PATTERNS          = *.py
+CREATE_SUBDIRS         = YES
+INPUT                  = lsb.py lsb_test.py
+EXCLUDE_PATTERNS       =
 RECURSIVE              = YES
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
 GENERATE_HTML          = YES
-HTML_OUTPUT            = html
 GENERATE_LATEX         = NO
+GENERATE_XML           = NO
